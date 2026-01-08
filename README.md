@@ -169,24 +169,30 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 
 ## Dashboard Visualizations  
 
+<img src="images/store view db.png" alt="Store Dashboard — Store view (Image 1)" width="800" />
+
 ### Store Dashboard (Part 1)  
 - **Zebra BI Combo Chart**: Revenue vs Target bars by Store + variance % (up/down arrows).
 - **Dynamic KPIs**: Total Revenue, Target, Variance (IF/TEXT for ±12% ↑ with emojis).
 - **Month Slicer**: 4-column, custom styled (bottom border on selected).
-  
+
+<img src="images/time frame db.png" alt="Time Frame Dashboard — Time Frame view (Image 2)" width="800" />
+
 ### Time Frame Dashboard (Part 2)  
 - **Trend Chart**: Smoothed Revenue/Target lines + MoM variance.
 - **Waffle Charts**: Weekend/Weekday revenue % (10x10 grids).
-- **Quarter Combo**: Columns + lines + % diff, highlights above average.   
-- Variance waterfall (invert if negative, conditional colors).  
+- **Quarter Combo**:  Columns + lines + % diff, highlights above average.   
+- Variance waterfall (invert if negative, conditional colors).
+
+<img src="images/profit view.png" alt="Profit View Dashboard — Profit View (Image 3)" width="800" />
 
 ### Profit View Dashboard (Part 3)  
 - **Customer Switcher**: Top/Bottom 5 via Option Buttons (Profit/Revenue).
 - **Age Buckets**: Column chart (0-20, 21-30, etc.) + average age.
 - **Gender Waffle**: Icon-based (square/male, circle/female).
 - **Product KPIs**: Return Rate, # Products, Top Products toggle.
-- Dynamic captions (TEXTJOIN + IF for context like "Top 5 Profitable Products: 100/600 Customers").  
-
+- Dynamic captions (TEXTJOIN + IF for context like "Top 5 Profitable Products: 100/600 Customers").
+  
 **Design Elements**: Gradient shapes (RGB: 31-140-179 theme), icons (Flaticon PNGs recolored), navigation hyperlinks, toggle VBA for slicers (AI-enhanced macro).   
 
 ---
