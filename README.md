@@ -78,7 +78,8 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
    - Extracted **Year**, **Month Name**, **Month Number**, **Quarter**, **Weekday**, **Weekend** flag.
    - Added sorting columns (e.g., MonthSort = 1-12).
 <table>
-  <tr>
+  <tr><td style="text-align: center;">
+      <em>Load Optimization</em><br />
     <td><img src="images/only connection 1.png" alt="Queries set to **Connection Only**" width="300" height="300" /></td>
     <td><img src="images/only connection 2.png" alt="Queries set to **Connection Only**" width="300" height="300" /></td>
   </tr>
@@ -96,6 +97,18 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
 ### Model Structure  
 - **Fact Table**: Transactions (20K+ rows) as central hub.  
 - **Dimension Tables**: Customers, Products, Salespersons, Stores, Date (one-to-many from fact).  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>pivot data model</em><br />
+      <img src="images/pivot data model.png" alt="pivot data model" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>power pivot data</em><br />
+      <img src="images/power pivot data.png" alt="power pivot data" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 ### Relationships Established  
 1. **Fact[CustomerID] → Customers[CustomerID]** (Many:1, single direction).  
@@ -117,6 +130,14 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
 
 ### Creating DAX Measures  
 **Core Calculations** (stored in blank "calculations" table):  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>Dax measures in the separate table </em><br />
+      <img src="images/all measures.png" alt="all measures" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 | Measure | Formula | Purpose |
 |---------|---------|---------|
@@ -135,6 +156,15 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
 **Notes**:  
 Custom formats: e.g., $$[<=1000000]\$0.0,,"M";[<=1000]\$0.0,"K";\$0.0$$ for abbreviated millions/Ks.  
 
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>Custom format</em><br />
+      <img src="images/value 1.png" alt="value 1" width="400" height="300" />
+    </td>
+  </tr>
+</table>
+
 ---
 ## Pivot Table Creation & Implementation  
 
@@ -152,6 +182,18 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 |------------|------|--------|---------|
 | Store Revenue | StoreName | Total Revenue, Target | Source for revenue bars  
 | Store Variance | StoreName | Variance % | Dynamic variance labels  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>store pivot 1</em><br />
+      <img src="images/store pivot 1.png" alt="store pivot 1" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>store pivot 2</em><br />
+      <img src="images/store pivot 2.png" alt="store pivot 2" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 **Time Frame Dashboard** :  
 | PivotTable | Rows/Columns | Values | Purpose |
@@ -159,6 +201,22 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 | Monthly Trends | Month (Columns) | Total Revenue | Line chart with markers  
 | Quarter Analysis | Quarter | Revenue, Average | Benchmark comparison  
 | Weekday Split | Weekday | Revenue % of Total | Waffle chart source  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>time pivot 1</em><br />
+      <img src="images/time pivot 1.png" alt="time pivot 1" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>time pivot 2</em><br />
+      <img src="images/time pivot 2.png" alt="time pivot 2" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>time pivot 3</em><br />
+      <img src="images/time pivot 3.png" alt="time pivot 3" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 **Profit View Dashboard** :  
 | PivotTable | Rows | Values | Purpose |
@@ -166,10 +224,51 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 | Customer Ranking | Customer Name (Top 5) | Profit Margin | Switchable top/bottom bars  
 | Age Demographics | Age Group | Profit %, Avg Age | Demographic analysis  
 | Product Performance | Product Name (Top 5) | Profit/Quantity | Category breakdown  
-
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>profit pivot 1</em><br />
+      <img src="images/profit pivot 1.png" alt="profit pivot 1" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>profit pivot 2</em><br />
+      <img src="images/profit pivot 2.png" alt="profit pivot 2" width="400" height="300" />
+    </td>
+    <td style="text-align:  center;">
+      <em>profit pivot 3</em><br />
+      <img src="images/profit pivot 3.png" alt="profit pivot 3" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>profit pivot 4</em><br />
+      <img src="images/profit pivot 4.png" alt="profit pivot 4" width="400" height="300" />
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:  center;">
+      <em>profit pivot 5</em><br />
+      <img src="images/profit pivot 5.png" alt="profit pivot 5" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>profit pivot 6</em><br />
+      <img src="images/profit pivot 6.png" alt="profit pivot 6" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>profit pivot 7</em><br />
+      <img src="images/profit pivot 7.png" alt="profit pivot 7" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 #### **3. Advanced Value Settings**  
 I configured each measure through Value Field Settings with custom calculations and formatting.   For variance analysis, I used "Show Values As → % Difference From" to calculate month-over-month changes.   Number formats were customized to display abbreviated values (e.g., $5.4M instead of $5,400,000).  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>value 2</em><br />
+      <img src="images/value 2.png" alt="value 2" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
 #### **4. Layout Optimization**  
 I standardized all PivotTables with compact layout, removed subtotals and grand totals, and disabled banded rows for cleaner visuals.   Each PivotTable was named descriptively (e.g., "pt_StoreRevenue") for easy reference in VBA macros.  
@@ -226,7 +325,56 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 ## Key Features:
 - **Dynamic KPIs**: Total revenue ($$\$5.4M$$), COGS, profit margin (42.8%), refund rate (8%), and targets with variance indicators (e.g., +46% growth).   
 - **Multi-tab Views**: Store analysis, time frame trends, profit views with customer/product breakdowns.   
-- **Interactive Controls**: Slicers (month, category), option buttons (top/bottom 5), combo boxes, and hide/show filters via VBA macros.   
+- **Interactive Controls**: Slicers (month, category), option buttons (top/bottom 5), combo boxes, and hide/show filters via VBA macros.
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>multi tab view</em><br />
+      <img src="images/multi tab view.png" alt="multi tab view" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>combo box</em><br />
+      <img src="images/combo box.png" alt="combo box" width="400" height="300" />
+    </td>
+    <td style="text-align:  center;">
+      <em>waffle chart</em><br />
+      <img src="images/waffle chart.png" alt="waffle chart" width="400" height="300" />
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:  center;">
+      <em>zebra BI chart</em><br />
+      <img src="images/zebra BI chart.png" alt="zebra BI chart" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>gradient chart</em><br />
+      <img src="images/gradient chart.png" alt="gradient chart" width="400" height="300" />
+    </td>
+    <td style="text-align:  center;">
+      <em>assigning VBA macro</em><br />
+      <img src="images/assigning VBA macro.png" alt="assigning VBA macro" width="400" height="300" />
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:   center;">
+      <em>interaactive slicer 2</em><br />
+      <img src="images/interaactive slicer 2.png" alt="interaactive slicer 2" width="400" height="300" />
+    </td>
+    <td style="text-align: center;">
+      <em>interactive slicer 1</em><br />
+      <img src="images/interactive slicer 1.png" alt="interactive slicer 1" width="400" height="300" />
+    </td>
+    <td style="text-align:  center;">
+      <em>interactive caption 1</em><br />
+      <img src="images/interactive caption 1.png" alt="interactive caption 1" width="400" height="300" />
+    </td>
+    <td style="text-align:  center;">
+      <em>interactive caption 2</em><br />
+      <img src="images/interactive caption 2.png" alt="interactive caption 2" width="400" height="300" />
+    </td>
+  </tr>
+</table>
+    
 - **Custom Visuals**: Waffle charts (weekday revenue split), gradient-filled trends, zebra add-in bars, and conditional formatting with icons/arrows.   
 - **Data Model**: Star schema with 1:many relationships (fact → dimensions).  
 - **DAX Measures**: 10+ custom metrics (e.g., Profit % = $$DIVIDE([Profit], [Revenue])$$, formatted as %).     
