@@ -1,25 +1,40 @@
 # BIX Business Performance Analytics Dashboard 
+
+<!-- Technology badges -->
+[![Microsoft Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)](https://github.com/nafisalzamee-lab/BIX-Business-Performance-Dashboard/blob/main/BIX%20Business%20Dashboard.xlsm)
+
+<!-- Action buttons (rounder style) -->
+[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=flat&logo=youtube&logoColor=white)](https://youtu.be/-GmB_grXbdo)
+[![Connect on LinkedIn](https://img.shields.io/badge/Connect%20with%20me-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/md-nafis-al-zamee-a88a9024b)
+[![Download & Explore Dashboard](https://img.shields.io/badge/Download%20%26%20Play-Excel%20Dashboard-217346?style=flat&logo=microsoft-excel&logoColor=white)](https://github.com/nafisalzamee-lab/BIX-Business-Performance-Dashboard/raw/main/BIX%20Business%20Dashboard.xlsm)
+[![Download Excel File](https://img.shields.io/badge/Download-Excel%20File-217346?style=flat&logo=microsoft-excel&logoColor=white)](https://github.com/nafisalzamee-lab/BIX-Business-Performance-Dashboard/raw/main/BIX%20Business%20Dashboard.xlsm)
+
+---
+
+<!-- Clickable YouTube thumbnail -->
+[![Retail Sales Data Analysis with Excel](https://img.youtube.com/vi/-GmB_grXbdo/maxresdefault.jpg)](https://youtu.be/-GmB_grXbdo)
+
   
 ## Project Overview
 This project features a **dynamic, interactive Excel dashboard** designed to analyze retail sales performance across stores, time periods, and customer segments. Transforming raw transactional data into actionable insights, the solution relies on a **normalized data model** in **Power Pivot** that interconnects a 20,000+ row fact table with specific customer, product, store, and custom date dimensions. Built entirely within Microsoft Excel using **Power Query** for data extraction and advanced **DAX measures** for calculation, the dashboard visualizes critical KPIs—including revenue, profit margins, targets, and refund trends—to support data-driven decision-making.
 
 ---
 ## Problem Statement  
-The business required an interactive dashboard to consolidate and analyze transactional data for **revenue tracking**, **profit optimization**, **customer segmentation**, and **operational KPIs** across stores, timeframes, and demographics—but lacked a scalable Excel solution.   
+The reail company **BIX** required an interactive dashboard to consolidate and analyze transactional data for **revenue tracking**, **profit optimization**, **customer segmentation**, and **operational KPIs** across stores, timeframes, and demographics—but lacked a scalable Excel solution.   
 
 ---
 
 ## Project Objectives
 
-* **Data Transformation & Modeling:** Normalize and model raw transactional data (capable of handling up to 10M+ rows) to ensure seamless performance and stability without lag.
-* **Multi-View Architecture:** Develop **three interconnected dashboards**—Store Performance, Time Frame Analysis, and Profit View—to provide a holistic view of the business.
-* **Dynamic Analysis & Segmentation:** Enable granular slicing by time, store, product, and salesperson, alongside customer demographic segmentation (age, gender), to identify **growth opportunities** and **underperforming segments**.
-* **Visual Performance Tracking:** Implement dynamic KPIs with visual storytelling elements (conditional formatting, icons, arrows) to compare actuals vs. targets.
-* **Key Metric Monitoring:** Track and visualize high-impact metrics, specifically monitoring **Revenue Growth (46%)**, **Profit Margins (42.8%)**, and **Refund Rates (8%)** to drive data-led decision-making.
+* **Data Transformation & Modeling:** Normalizing and modeling raw transactional data (capable of handling up to 10M+ rows) to ensure seamless performance and stability without lag.
+* **Multi-View Architecture:** Developing **three interconnected dashboards**—Store Performance, Time Frame Analysis, and Profit View—to provide a holistic view of the business.
+* **Dynamic Analysis & Segmentation:** Enabling granular slicing by time, store, product, and salesperson, alongside customer demographic segmentation (age, gender), to identify **growth opportunities** and **underperforming segments**.
+* **Visual Performance Tracking:** Implementing dynamic KPIs with visual storytelling elements (conditional formatting, icons, arrows) to compare actuals vs. targets.
+* **Key Metric Monitoring:** Tracking and visualizing high-impact metrics, specifically monitoring **Revenue Growth (46%)**, **Profit Margins (42.8%)**, and **Refund Rates (8%)** to drive data-led decision-making.
   
 **Technologies Used:**  
-- **Excel 365/2021+**: Power Query (ETL), Power Pivot (modeling), DAX (measures).  
-- **Visualization**: Charts, conditional formatting, icons/shapes (Flaticon), Zebra add-in.  
+- **Microsoft Excel 2024**: Power Query (ETL), Power Pivot (modeling), DAX (measures).  
+- **Visualization**: Charts, conditional formatting, icons/shapes (Flaticon), Zebra BI add-in.  
 - **Automation**: VBA macros (slicer toggle), form controls (group boxes/option buttons).  
 
 ---
@@ -42,7 +57,7 @@ The business required an interactive dashboard to consolidate and analyze transa
 1. **Revenue vs Target Variance**: By Store/Month/Quarter (absolute + % with up/down indicators).   
 2. **Profitability Metrics**: Margin %, Cost of Goods Sold, MoM growth.   
 3. **Return & Refund Analysis**: Total Refund, Refund Rate (8% overall), Return Quantity %.   
-4. **Customer Segmentation**: Age groups (0-20, 21-30, etc.), Gender profit %, Top/Bottom 5 customers.   
+4. **Customer Segmentation**: Age groups (0-20, 21-30, etc.), Gender profit %, Top/Bottom 5 customers..   
 5. **Time Intelligence**: Weekend/Weekday revenue %, Quarter trends, # Products Sold (distinct).   
 6. **Product Performance**: Top products by Profit/Quantity, overall # Products/Transactions.
 7. **Store Performance**: Revenue/profit by location with variance % and top/bottom rankings.
@@ -68,9 +83,9 @@ The business required an interactive dashboard to consolidate and analyze transa
 </table>
 I Structured ETL pipeline to clean and transform raw CSV data into a relational model. I implemented the following steps sequentially:
 
-1. **Source Import**: Loaded 5 CSV files (transactions, customers, products, salespersons, stores) via **Get Data > From Text/CSV**.  
+1. **Source Import**: Loaded 5 CSV files (transactions, customers, products, salespersons, stores) via **Get Data > From Text/CSV**.then clicked transform data to enter power query.  
 2. **Header Promotion**: Promoted first row to column headers across all queries.  
-3. **Data Type Changes**: Auto-detected and set types (e.g., Date to Date, QuantitySold/ReturnQuantity to Whole Number, IDs to Text).  
+3. **Data Type Changes**:Power query auto-detected and set types (e.g., Date to Date, QuantitySold/ReturnQuantity to Whole Number, IDs to Text).  
 4. **Name Merging**: Combined FirstName + " " + LastName into **FullName** columns for customers and salespersons.  
 5. **Age Derivation**: Added **Age** column: $$Age = \frac{TODAY() - DOB}{365.25}$$ (rounded to nearest whole number).  
 6. **Duplicate Removal**: Eliminated rows based on unique **TransactionID** in fact table.  
@@ -91,7 +106,7 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
  
 
 ### Establishing  Power Pivot Relationships (Data modeling)  
-**Star Schema** design in Power Pivot for efficient querying and slicing.  
+Used **Star Schema** design in Power Pivot for efficient querying and slicing.  
 
 ### Model Structure  
 - **Fact Table**: Transactions (20K+ rows) as central hub.  
@@ -116,7 +131,7 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
 4. **Fact[SalespersonID] → Salespersons[SalespersonID]** (Many:1).  
 5. **Fact[Date] → Date[Date]** (Many:1, active for time intelligence).  
 
-**Additional Table**: Blank "Calculations" table to house all DAX measures (no relationships needed).  
+**Additional Table**:I created a blank "Calculations" table to house all DAX measures (no relationships needed).  
 
 | Relationship | Cardinality | Cross-Filter | Purpose |
 |--------------|-------------|--------------|---------|
@@ -153,7 +168,7 @@ I Structured ETL pipeline to clean and transform raw CSV data into a relational 
 | **Average Customer Age** | $$AVERAGE(Customers[Age])$$   | Computes average age of purchasing customers.   
 
 **Notes**:  
-Custom formats: e.g., $$[<=1000000]\$0.0,,"M";[<=1000]\$0.0,"K";\$0.0$$ for abbreviated millions/Ks.  
+Custom formats used: e.g., $$[<=1000000]\$0.0,,"M";[<=1000]\$0.0,"K";\$0.0$$ for abbreviated millions/Ks.  
 
 <table>
   <tr>
@@ -184,11 +199,11 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 <table>
   <tr>
     <td style="text-align:  center;">
-      <em>store KPI pivot tables</em><br />
+      <em>store KPI  table</em><br />
       <img src="images/store pivot 1.png" alt="store pivot 1" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>store pivot 2</em><br />
+      <em>store revenue table</em><br />
       <img src="images/store pivot 2.png" alt="store pivot 2" width="400" height="300" />
     </td>
   </tr>
@@ -203,15 +218,15 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 <table>
   <tr>
     <td style="text-align:  center;">
-      <em>time pivot 1</em><br />
+      <em>Monthly Trends</em><br />
       <img src="images/time pivot 1.png" alt="time pivot 1" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>time pivot 2</em><br />
+      <em>Weekday Split</em><br />
       <img src="images/time pivot 2.png" alt="time pivot 2" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>time pivot 3</em><br />
+      <em>Quarter Analysis</em><br />
       <img src="images/time pivot 3.png" alt="time pivot 3" width="400" height="300" />
     </td>
   </tr>
@@ -226,33 +241,33 @@ For each dashboard section, I inserted PivotTables directly from the data model 
 <table>
   <tr>
     <td style="text-align:  center;">
-      <em>profit pivot 1</em><br />
+      <em>Monthly profit trends with variance analysis pivot tables</em><br />
       <img src="images/profit pivot 1.png" alt="profit pivot 1" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>profit pivot 2</em><br />
+      <em>customer ranking</em><br />
       <img src="images/profit pivot 2.png" alt="profit pivot 2" width="400" height="300" />
     </td>
     <td style="text-align:  center;">
-      <em>profit pivot 3</em><br />
+      <em>age demographics</em><br />
       <img src="images/profit pivot 3.png" alt="profit pivot 3" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>profit pivot 4</em><br />
+      <em>profit by gender </em><br />
       <img src="images/profit pivot 4.png" alt="profit pivot 4" width="400" height="300" />
     </td>
   </tr>
   <tr>
     <td style="text-align:  center;">
-      <em>profit pivot 5</em><br />
+      <em>top product categories pivot table</em><br />
       <img src="images/profit pivot 5.png" alt="profit pivot 5" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>profit pivot 6</em><br />
+      <em>operattional leakge pivot table</em><br />
       <img src="images/profit pivot 6.png" alt="profit pivot 6" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>profit pivot 7</em><br />
+      <em>product performance</em><br />
       <img src="images/profit pivot 7.png" alt="profit pivot 7" width="400" height="300" />
     </td>
   </tr>
@@ -263,14 +278,14 @@ I configured each measure through Value Field Settings with custom calculations 
 <table>
   <tr>
     <td style="text-align:  center;">
-      <em>value 2</em><br />
+      <em>value setting (show value as) </em><br />
       <img src="images/value 2.png" alt="value 2" width="400" height="300" />
     </td>
   </tr>
 </table>
 
 #### **4. Layout Optimization**  
-I standardized all PivotTables with compact layout, removed subtotals and grand totals, and disabled banded rows for cleaner visuals.   Each PivotTable was named descriptively (e.g., "pt_StoreRevenue") for easy reference in VBA macros.  
+I standardized all PivotTables with compact layout, removed subtotals and grand totals, and disabled banded rows for cleaner visuals.   Each PivotTable was named descriptively in the backend pivot table list (e.g., "pt_StoreRevenue") for easy reference in VBA macros.  
 
 
 #### **5. Interactive Slicer System**  
@@ -279,8 +294,16 @@ I created slicers for Month, Category, and Gender dimensions to enable dynamic f
 
 #### **6. PivotChart Integration**  
 From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart → Clustered Column).   I enhanced charts with data labels sourced from helper columns using formulas like =TEXT([@Variance],"0.0%"), added targets on secondary axes, and applied gradient fills with the Zebra add-in.    The charts automatically refresh when users interact with slicers, providing instant visual feedback.  
+<table>
+  <tr>
+    <td style="text-align:  center;">
+      <em>Created pivot charts for dashboard</em><br />
+      <img src="images/pivot chart 1.png" alt="pivot chart 1.png" width="400" height="300" />
+    </td>
+  </tr>
+</table>
 
-**Key Achievement**: The data model relationships enabled one slicer to filter the fact table and all dimension tables simultaneously, eliminating the need for complex VLOOKUP formulas.
+**Key Achievement**: The data model relationships enabled one slicer to filter the fact table and all dimension tables simultaneously, eliminating the need for  VLOOKUP formulas.
 
 ---
 
@@ -288,35 +311,37 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 
 <img src="images/store view db.png" alt="Store Dashboard — Store view (Image 1)" width="800" />
 
-### Store Dashboard (Part 1)  
+### Store Dashboard 
 - **Zebra BI Combo Chart**: Revenue vs Target bars by Store + variance % (up/down arrows).
 - **Dynamic KPIs**: Total Revenue, Target, Variance (IF/TEXT for ±12% ↑ with emojis).
 - **Month Slicer**: 4-column, custom styled (bottom border on selected).
 
 <img src="images/time frame db.png" alt="Time Frame Dashboard — Time Frame view (Image 2)" width="800" />
 
-### Time Frame Dashboard (Part 2)  
+### Time Frame Dashboard   
 - **Trend Chart**: Smoothed Revenue/Target lines + MoM variance.
 - **Waffle Charts**: Weekend/Weekday revenue % (10x10 grids).
 - **Quarter Combo**:  Columns + lines + % diff, highlights above average.   
-- Variance waterfall (invert if negative, conditional colors).
+- **Variance waterfall** (invert if negative, conditional colors).
 
 <img src="images/profit view.png" alt="Profit View Dashboard — Profit View (Image 3)" width="800" />
 
-### Profit View Dashboard (Part 3)  
+### Profit View Dashboard  
 - **Customer Switcher**: Top/Bottom 5 via Option Buttons (Profit/Revenue).
 - **Age Buckets**: Column chart (0-20, 21-30, etc.) + average age.
 - **Gender Waffle**: Icon-based (square/male, circle/female).
 - **Product KPIs**: Return Rate, # Products, Top Products toggle.
-- Dynamic captions (TEXTJOIN + IF for context like "Top 5 Profitable Products: 100/600 Customers").
-  
-**Design Elements**: Gradient shapes (RGB: 31-140-179 theme), icons (Flaticon PNGs recolored), navigation hyperlinks, toggle VBA for slicers (AI-enhanced macro).   
+- **Dynamic captions** (TEXTJOIN + IF for context like "Top 5 Profitable Products: 100/600 Customers").
 
+***Design Elements***: 
+- **Gradient shapes**: Used the 31-140-179 RGB theme for a cohesive visual identity.
+- **Icons**: Flaticon PNG icons recolored to match the dashboard’s gradient theme.
+- **Navigation**: Interactive navigation hyperlinks used for moving between dashboard views.
+- **Toggle VBA**: AI‑enhanced VBA macro used to toggle slicers on and off for dynamic filtering.
 ---
-
 ## Design & UX Principles  
 - **Color Consistency**: Blue gradient theme (RGB 31-140-179), white/grey backgrounds for readability.  
-- **Hierarchy**: Bold KPIs top-center, slicers left, charts right; navigation tabs bottom.   
+- **Hierarchy**: Bold KPIs top-center, slicers left, charts right; navigation tabs above.   
 - **Interactivity**: One-click filters, hover effects, no-scroll layout (fit to screen).  
 - **Accessibility**: High contrast, alt-text icons, logical tab order.  
 - **Minimalism**: Hide unused elements, dynamic titles/captions for context.  
@@ -324,7 +349,7 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 ## Key Features:
 - **Dynamic KPIs**: Total revenue ($$\$5.4M$$), COGS, profit margin (42.8%), refund rate (8%), and targets with variance indicators (e.g., +46% growth).   
 - **Multi-tab Views**: Store analysis, time frame trends, profit views with customer/product breakdowns.   
-- **Interactive Controls**: Slicers (month, category), option buttons (top/bottom 5), combo boxes, and hide/show filters via VBA macros.
+- **Interactive Controls**: Slicers (month, category), option buttons (top/bottom 5), combo box, and hide/show filters via VBA macros.
 <table>
   <tr>
     <td style="text-align:  center;">
@@ -366,15 +391,16 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
   <table>
   <tr>
     <td style="text-align:  center;">
-      <em>interaactive slicer 2</em><br />
+      <em>interaactive slicer (store name)</em><br />
       <img src="images/interaactive slicer 2.png" alt="interaactive slicer 2" width="400" height="300" />
     </td>
     <td style="text-align: center;">
-      <em>interactive slicer 1</em><br />
+      <em>interactive slicer (month  & product category)</em><br />
       <img src="images/interactive slicer 1.png" alt="interactive slicer 1" width="400" height="300" />
     </td>
   </tr>
-</table>  
+</table>
+
 - **Custom Visuals**: Waffle charts (weekday revenue split), gradient-filled trends, zebra add-in bars, and conditional formatting with icons/arrows.   
 - **Data Model**: Star schema with 1:many relationships (fact → dimensions).  
 - **DAX Measures**: 10+ custom metrics (e.g., Profit % = $$DIVIDE([Profit], [Revenue])$$, formatted as %).     
@@ -396,15 +422,16 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 - **Quarterly Stability:** Despite monthly swings, quarterly revenue remains consistent, hovering near the **$1.36M average** across all four quarters.
 
 ### 2. Store Performance Variance
-- **Store performance reveals a massive 55.7% execution gap between top locations like Lee-Myers (+31.1%) and underperformers like Novak PLC (-24.6%), indicating that revenue variance is driven by specific operational inconsistencies rather than market-wide issues.**
+- Store performance reveals a massive 55.7% execution gap between top locations like Lee-Myers (+31.1%) and underperformers like Novak PLC (-24.6%), indicating that revenue variance is driven by ***specific operational inconsistencies rather than market-wide issues***.
 
 ### 3. Customer & Product Profitability
 - **Demographic Focus:** Profitability is driven by older demographics, with the **51+ age group** contributing the most profit (≈ $554K), followed by the **41–50 group** (≈ $504K). Gender contribution is effectively balanced (51.5% Male vs. 48.5% Female).
 - **Category Hierarchy:** **Soft Drinks** are the primary profit engine ($718K), generating nearly double the profit of the next best category, **Sports Drinks** ($417K).
 - **Operational Leakage:** A high **return rate of 8.03%** and **refund rate of 8.05%** indicates potential quality control or customer satisfaction issues that are eroding margins.
 
+---
   
-**Skills Demonstrated**:Data cleaning ,Data preparation, Data modeling,Power Pivot, Dashboarding, Power Query ETL, DAX , Advanced Charting (waffle/gradients), Form controls/VBA, Custom Formatting, Data Story telling. 
+**Skills Demonstrated**: *Data cleaning ,Data preparation, Data modeling,Power Pivot, Dashboarding, Power Query ETL, DAX , Advanced Charting (waffle/gradients), Form controls/VBA, Custom Formatting, Data Story telling*. 
 
 ---
 
@@ -413,5 +440,12 @@ From each PivotTable, I created corresponding PivotCharts (Insert → PivotChart
 - **Scalable Solution**: Handles large datasets dynamically; exportable to Power BI if needed.      
 
 ---
+## Download & Play with the Dashboard
+
+You can view and run the full Dashboard by downloading the excel file here:  
+[Download & Open the Dashboard](https://github.com/nafisalzamee-lab/BIX-Business-Performance-Dashboard/raw/main/BIX%20Business%20Dashboard.xlsm)
+
+*Need Help??*
+[![Connect with me on LinkedIn](https://img.shields.io/badge/Connect%20with%20me-LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/md-nafis-al-zamee-a88a9024b)
 
 
